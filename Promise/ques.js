@@ -4,15 +4,15 @@ new Promise((resolve, reject) => {
         console.log("this is promises");
         let err = true;
         if (!err) {
-            resolve();
+            resolve("Username and password found");
         } else {
-            reject();
+            reject("Error....:data fail");
         }
     }, 2000);
 })
-.then(() => {
-    console.log();
+.then((data) => {
+    console.log(data);
 })
-.catch(() => {
-    console.log();
+.catch((error) => {
+    console.log(error);
 });

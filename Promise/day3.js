@@ -29,13 +29,13 @@
 //     });
 
 //Async Await
-console.log("1");
-async function test(){
-    console.log("2");
-    await console.log("3");
-    console.log("4");
-}
-t1=test();
-console.log("5");
+//console.log("1");
+// async function test(){
+//     console.log("2");
+//     await console.log("3");
+//     console.log("4");
+// }
+// t1=test();
+// console.log("5");
 
 
