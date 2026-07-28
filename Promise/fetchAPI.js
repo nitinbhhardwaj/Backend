@@ -1,5 +1,15 @@
-async function test(){
+async function test() {
     console.log("Message:2");
-    fetch("https://jsonplaceholder.typicode.com/posts");
+
+    const response = await fetch("./studentdata.json");
+    const stdn = await response.json();
+
+    console.log(stdn);
+
+    console.log("Message:3");
+    return stdn;
 }
+
 test();
+
+console.log("Message:4");
