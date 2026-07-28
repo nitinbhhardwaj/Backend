@@ -6,10 +6,18 @@
 
 const promiseOne=new Promise((resolve,reject)=>{
  console.log("Promise task 1"); 
+ resolve("Promise passed by using resolve");
 });
+let msg=true;
+if(!msg==true){
+    console.log("Message using promised failed");
+}
+else{
+    console.log("error.....");
+}
 promiseOne.then((result)=>{
     console.log(result);
 }
-).catch(()=>{
-
+).catch((error)=>{
+    console.log("error");
 })
