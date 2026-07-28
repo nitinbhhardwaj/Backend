@@ -4,3 +4,12 @@
 //Rejected: meaning that the operation failed.
 
 
+const promiseOne=new Promise((resolve,reject)=>{
+ console.log("Promise task 1"); 
+});
+promiseOne.then((result)=>{
+    console.log(result);
+}
+).catch(()=>{
+
+})
