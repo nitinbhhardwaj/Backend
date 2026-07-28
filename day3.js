@@ -4,20 +4,26 @@
 //Rejected: meaning that the operation failed.
 
 
-const promiseOne=new Promise((resolve,reject)=>{
- console.log("Promise task 1"); 
- resolve("Promise passed by using resolve");
+const promiseOne = new Promise((resolve, reject) => {
+    console.log("Promise task 1");
+
+    setTimeout(() => {
+        resolve("Promise passed by using resolve");
+    }, 2000);
 });
-let msg=true;
-if(!msg==true){
+
+let msg = true;
+
+if (!msg == true) {
     console.log("Message using promised failed");
-}
-else{
+} else {
     console.log("error.....");
 }
-promiseOne.then((result)=>{
-    console.log(result);
-}
-).catch((error)=>{
-    console.log("error");
-})
+
+promiseOne
+    .then((result) => {
+        console.log(result);
+    })
+    .catch((error) => {
+        console.log(error);
+    });

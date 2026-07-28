@@ -1,0 +1,6 @@
+git init
+git add file name/.
+git status
+git commit -m "msg"
+git branch -M main
+git remote add origin ("githubrepo url")
