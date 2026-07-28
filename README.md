@@ -49,18 +49,6 @@ Hi, I'm **Nitin Bhardwaj**, a Computer Science student passionate about software
 * Docker
 * VS Code
 
-## 📂 Repository Structure
-
-```text
-backend/
-├── projects/
-├── practice/
-├── notes/
-├── mini-projects/
-├── resources/
-└── README.md
-```
-
 ## 📚 Topics Covered
 
 * Node.js Fundamentals
