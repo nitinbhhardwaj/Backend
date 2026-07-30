@@ -10,6 +10,8 @@ async function test() {
     return stdn;
 }
 
-test();
+test().then((res)=>{
+    console.log(res);
+});
 
 console.log("Message:4");
