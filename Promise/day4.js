@@ -16,10 +16,10 @@ const f2=()=>{
     console.log("f2");
 }
 
-function main(){
+const f3=function main(){
     console.log("this event loop");
     setTimeout(f1,1000);
-    setTimeout(f2,2000);
+    setTimeout(f3,2000);
     new Promise((resolve,reject)=>{
         resolve("I am promise1");
     }).then((result)=>{
@@ -31,4 +31,4 @@ function main(){
         console.log(res);
     })
 }
-main();
+f3();
