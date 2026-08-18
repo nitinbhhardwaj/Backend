@@ -1,23 +1,21 @@
-//Event
-//EventEmitter- register event or event listener, on(),emit(event param)-trigger event/create event/fire event
+// Event
+// EventEmitter - register event/listener using on()
+// emit() - trigger/fire an event
 
-const EventEmitter=require('events');
-class MyEvent extends EventEmitter{}
-const events=new MyEvent();
-event.on("greet",(name)=>{
-    console.log(`hello cse 24 my name is ${name}`);//template literals-`${vari}`
+const EventEmitter = require("events");
+
+class MyEvent extends EventEmitter {}
+
+const events = new MyEvent();
+
+events.on("greet", (name) => {
+    console.log(`Hello CSE 24, my name is ${name}`);
 });
-events.on("exit",()=>{})
-event.emit("greet","Nitin Bhardwaj");
 
-// const even=new EventEmitter();
-// event.on("name",()=>{
-//     console.log("Name:Nitin Bhardwaj");
-// });
-// event.emit("name");
+events.on("exit", () => {
+    console.log("Exit event triggered");
+});
 
-// const eve=new EventEmitter();
-// event.on("age",()=>{
-//     console.log("Age:36");
-// });
-// event.emit("age");
+events.emit("greet", "Nitin Bhardwaj");
+
+// events.emit("exit");
