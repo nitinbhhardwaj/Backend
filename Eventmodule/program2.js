@@ -1,4 +1,4 @@
 //Create trigger event click and mouseover and call that mouseover event in click event
-class button{
-    
-}
+//Simulate DOM like event handling in Node.js using event emitter
+//addEventListener-.on()
+//dispatchEvent-.emit()
