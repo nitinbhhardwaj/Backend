@@ -27,4 +27,4 @@ event.on("exit",()=>{
 })
 event.emit("greet","cse24");
 event.emit("exit");
-Full stack development workshop program 1
+// Full stack development workshop program 1
