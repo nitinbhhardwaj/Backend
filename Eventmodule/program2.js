@@ -1,11 +1,19 @@
-//Create trigger event click and mouseover and call that mouseover event in click event
-//Simulate DOM like event handling in Node.js using event emitter
-//addEventListener-.on()
-//dispatchEvent-.emit()
-const EventEmitter=require('events');
-const emitter=new EventEmitter();
-emitter.on('mouseover',()=>{
-    console.log('Mouseover event triggered');
+const EventEmitter = require("events");
+
+const emitter = new EventEmitter();
+
+// mouseover event
+emitter.on("mouseover", () => {
+    console.log("Mouseover event triggered");
 });
-emitter.emit('click');
-emitter.emit('mouseover');
+
+// click event
+emitter.on("click", () => {
+    console.log("Click event triggered");
+
+    // Trigger mouseover inside click
+    emitter.emit("mouseover");
+});
+
+// Trigger click
+emitter.emit("click");
