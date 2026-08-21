@@ -1,13 +1,13 @@
 {
-  "name": "httpmodule",
+  "name": "findroute",
   "version": "1.0.0",
   "description": "",
   "license": "ISC",
   "author": "",
   "type": "module",
-  "main": "Myserver.js",
+  "main": "day8.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node Myserver.js"
+    "start": "node day8.js"
   }
 }
