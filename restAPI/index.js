@@ -24,6 +24,29 @@ app.post('/users', (req, res) => {
     res.json(user);
 });
 
-app.listen(8000, () => {
-    console.log('Server is running on http://localhost:8000');
+// PUT: update a user
+app.put('/users/:id', (req, res) => {
+    let user = users.find(u => u.id == req.params.id);
+
+    if (!user) {
+        return res.status(404).json({ message: "User not found" });
+    }
+
+    user.name = req.body.name;
+    user.email = req.body.email;
+
+    res.json(user);
 });
+
+// DELETE: delete a user
+app.delete('/users/:id', (req, res) => {
+    users = users.filter(u => u.id != req.params.id);
+    res.send("User deleted successfully");
+});
+
+app.listen(8000, () => {
+    console.log("Server is running on http://localhost:8000");
+});
+
+//Create a PRODUCT REST API and test all method in THUNDER CLIENT
+//work it on approx 100 approx 100 products and test all the methods in THUNDERCLIENT
