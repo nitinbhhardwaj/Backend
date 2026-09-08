@@ -50,3 +50,9 @@ app.listen(8000, () => {
 
 //Create a PRODUCT REST API and test all method in THUNDER CLIENT
 //work it on approx 100 approx 100 products and test all the methods in THUNDERCLIENT
+//Structure
+//1.create floder productrestapi
+//2.create index.js file
+//3.create a product.json file
+//4.install npm init: package.json
+//5.install express: npm i express
