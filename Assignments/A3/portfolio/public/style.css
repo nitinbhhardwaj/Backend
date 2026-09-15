@@ -1,0 +1,349 @@
+:root {
+  --bg: #F4EEE3;
+  --bg-elevated: #FFFFFF;
+  --text-primary: #2A1F1A;
+  --text-secondary: #7A6F63;
+  --accent: #6B1F2A;
+  --accent-soft: #F0DAD8;
+  --border: #E4DACB;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 48px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+/* HERO */
+.hero {
+  padding: 0 48px 40px;
+  position: relative;
+}
+
+.hero-word {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(60px, 12vw, 160px);
+  font-weight: 600;
+  color: var(--accent);
+  line-height: 0.9;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero-script {
+  font-family: 'Caveat', cursive;
+  font-size: 28px;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.hero-tagline {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.hero-intro {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  max-width: 380px;
+  margin-bottom: 24px;
+}
+
+.hero-signature {
+  font-family: 'Caveat', cursive;
+  font-size: 26px;
+  color: var(--text-primary);
+}
+
+.hero-role {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+.hero-right {
+  position: relative;
+}
+
+.hero-image-panel {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background: var(--accent-soft);
+  border-radius: 200px 200px 12px 12px;
+  overflow: hidden;
+}
+
+.hero-image-panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-badge {
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  background: var(--accent);
+  color: var(--bg);
+  border-radius: 50%;
+  width: 110px;
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+  transform: rotate(-8deg);
+}
+
+.hero-badge .dot {
+  font-size: 14px;
+  line-height: 1;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+
+.btn {
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: transform 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+}
+
+.btn-filled {
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+}
+
+/* SECTIONS */
+.section {
+  padding: 60px 48px;
+}
+
+.section-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 40px;
+  color: var(--accent);
+}
+
+.section-divider h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: var(--text-secondary);
+}
+
+/* PROJECTS */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.project-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  position: relative;
+}
+
+.project-thumb {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--accent-soft);
+  margin-bottom: 14px;
+}
+
+.project-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.project-meta {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.project-index {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.project-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 17px;
+  margin-bottom: 4px;
+}
+
+.project-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.project-link {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-size: 14px;
+  transition: background 0.15s ease;
+}
+
+.project-link:hover {
+  background: var(--accent-soft);
+}
+
+/* PROCESS + SKILLS */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.split-heading {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.process-step {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.step-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.process-step h5 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.process-step p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.skill-item h5 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.skill-item p {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+  .split {
+    grid-template-columns: 1fr;
+  }
+  .hero-word {
+    font-size: 60px;
+  }
+}
