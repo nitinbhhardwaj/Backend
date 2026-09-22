@@ -1,24 +1,89 @@
 const form = document.getElementById("requestForm");
 const requestsDiv = document.getElementById("requests");
 
+const totalRequests = document.getElementById("totalRequests");
+const highPriority = document.getElementById("highPriority");
+const categoryCount = document.getElementById("categoryCount");
+const requestCount = document.getElementById("requestCount");
+const submitButton = document.getElementById("submitButton");
+
 let editId = null;
 
 const getRequests = async () => {
     const response = await fetch("/api/requests");
     const requests = await response.json();
 
+    totalRequests.textContent = requests.length;
+
+    highPriority.textContent = requests.filter(
+        request => request.priority === "High"
+    ).length;
+
+    const categories = new Set(
+        requests.map(request => request.category)
+    );
+
+    categoryCount.textContent = categories.size;
+
+    requestCount.textContent =
+        `${requests.length} ${requests.length === 1 ? "request" : "requests"}`;
+
+    if (requests.length === 0) {
+        requestsDiv.innerHTML = `
+            <div class="empty">
+                No requests yet. Your first request will appear here.
+            </div>
+        `;
+        return;
+    }
+
     requestsDiv.innerHTML = "";
 
-    requests.forEach(request => {
+    requests.slice().reverse().forEach(request => {
+
+        const priorityClass = request.priority.toLowerCase();
+
         requestsDiv.innerHTML += `
             <div class="request">
-                <h3>${request.category} - ${request.priority}</h3>
-                <p><strong>Name:</strong> ${request.studentName}</p>
-                <p><strong>Email:</strong> ${request.email}</p>
-                <p><strong>Problem:</strong> ${request.description}</p>
 
-                <button onclick="editRequest(${request.id})">Edit</button>
-                <button onclick="deleteRequest(${request.id})">Delete</button>
+                <div class="request-top">
+                    <span class="request-category">
+                        ${request.category}
+                    </span>
+
+                    <span class="request-id">
+                        #${request.id}
+                    </span>
+                </div>
+
+                <h3>${request.studentName}</h3>
+
+                <p class="request-description">
+                    ${request.description}
+                </p>
+
+                <div class="request-bottom">
+
+                    <div class="request-info">
+                        <span>${request.email}</span>
+
+                        <span class="priority ${priorityClass}">
+                            ${request.priority}
+                        </span>
+                    </div>
+
+                    <div class="request-actions">
+                        <button onclick="editRequest(${request.id})">
+                            Edit
+                        </button>
+
+                        <button onclick="deleteRequest(${request.id})">
+                            Delete
+                        </button>
+                    </div>
+
+                </div>
+
             </div>
         `;
     });
@@ -36,6 +101,7 @@ form.addEventListener("submit", async (e) => {
     };
 
     if (editId) {
+
         await fetch(`/api/requests/${editId}`, {
             method: "PUT",
             headers: {
@@ -45,7 +111,14 @@ form.addEventListener("submit", async (e) => {
         });
 
         editId = null;
+
+        submitButton.innerHTML = `
+            Submit Request
+            <span>→</span>
+        `;
+
     } else {
+
         await fetch("/api/requests", {
             method: "POST",
             headers: {
@@ -60,6 +133,15 @@ form.addEventListener("submit", async (e) => {
 });
 
 const deleteRequest = async (id) => {
+
+    const confirmDelete = confirm(
+        "Are you sure you want to delete this request?"
+    );
+
+    if (!confirmDelete) {
+        return;
+    }
+
     await fetch(`/api/requests/${id}`, {
         method: "DELETE"
     });
@@ -68,6 +150,7 @@ const deleteRequest = async (id) => {
 };
 
 const editRequest = async (id) => {
+
     const response = await fetch(`/api/requests/${id}`);
     const request = await response.json();
 
@@ -78,6 +161,21 @@ const editRequest = async (id) => {
     document.getElementById("priority").value = request.priority;
 
     editId = id;
+
+    submitButton.innerHTML = `
+        Update Request
+        <span>→</span>
+    `;
+
+    document.getElementById("formSection").scrollIntoView({
+        behavior: "smooth"
+    });
+};
+
+const scrollToForm = () => {
+    document.getElementById("formSection").scrollIntoView({
+        behavior: "smooth"
+    });
 };
 
 getRequests();

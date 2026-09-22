@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "name": "Wireless Mouse",
+    "category": "Electronics",
+    "price": 599,
+    "stock": 45
+  },
+  {
+    "id": 2,
+    "name": "Mechanical Keyboard",
+    "category": "Electronics",
+    "price": 2499,
+    "stock": 30
+  },
+  {
+    "id": 3,
+    "name": "USB-C Cable",
+    "category": "Accessories",
+    "price": 399,
+    "stock": 100
+  },
+  {
+    "id": 4,
+    "name": "Bluetooth Speaker",
+    "category": "Electronics",
+    "price": 1499,
+    "stock": 25
+  },
+  {
+    "id": 5,
+    "name": "Wireless Earbuds",
+    "category": "Electronics",
+    "price": 1999,
+    "stock": 40
+  },
+  {
+    "id": 6,
+    "name": "Laptop Stand",
+    "category": "Accessories",
+    "price": 899,
+    "stock": 35
+  },
+  {
+    "id": 7,
+    "name": "Webcam",
+    "category": "Electronics",
+    "price": 1799,
+    "stock": 20
+  },
+  {
+    "id": 8,
+    "name": "Power Bank",
+    "category": "Electronics",
+    "price": 1299,
+    "stock": 50
+  },
+  {
+    "id": 9,
+    "name": "Smart Watch",
+    "category": "Wearables",
+    "price": 2999,
+    "stock": 28
+  },
+  {
+    "id": 10,
+    "name": "Phone Holder",
+    "category": "Accessories",
+    "price": 499,
+    "stock": 60
+  },
+  {
+    "id": 11,
+    "name": "Mobile Phone",
+    "price": 50000,
+    "category": "Electronics",
+    "stock": 34
+  },
+  {
+    "id": 12,
+    "name": "Earbus",
+    "price": 64352,
+    "category": "Accessories",
+    "stock": 23
+  }
+]

@@ -8,39 +8,155 @@
 </head>
 <body>
 
-    <h1>Campus Help Desk</h1>
+    <div class="background"></div>
 
-    <form id="requestForm">
+    <main class="container">
 
-        <input type="text" id="studentName" placeholder="Student Name" required>
+        <nav class="navbar">
+            <div class="logo">
+                <span class="logo-mark">C</span>
+                <div>
+                    <strong>Campus</strong>
+                    <span>Help Desk</span>
+                </div>
+            </div>
 
-        <input type="email" id="email" placeholder="Email" required>
+            <button class="nav-button" onclick="scrollToForm()">
+                + New Request
+            </button>
+        </nav>
 
-        <select id="category" required>
-            <option value="">Select Category</option>
-            <option value="Hostel">Hostel</option>
-            <option value="Academic">Academic</option>
-            <option value="Transport">Transport</option>
-            <option value="Library">Library</option>
-            <option value="Other">Other</option>
-        </select>
+        <section class="hero">
+            <div>
+                <span class="eyebrow">STUDENT SUPPORT PLATFORM</span>
+                <h1>Get campus problems<br><span>sorted faster.</span></h1>
+                <p>
+                    Submit a request, track your issue and keep
+                    everything organized in one place.
+                </p>
+            </div>
 
-        <textarea id="description" placeholder="Problem Description" required></textarea>
+            <div class="hero-badge">
+                <div class="pulse"></div>
+                System Online
+            </div>
+        </section>
 
-        <select id="priority" required>
-            <option value="">Select Priority</option>
-            <option value="Low">Low</option>
-            <option value="Medium">Medium</option>
-            <option value="High">High</option>
-        </select>
+        <section class="stats">
+            <div class="stat-card">
+                <span>Total Requests</span>
+                <strong id="totalRequests">0</strong>
+                <small>All submitted requests</small>
+            </div>
 
-        <button type="submit">Submit Request</button>
+            <div class="stat-card">
+                <span>High Priority</span>
+                <strong id="highPriority">0</strong>
+                <small>Needs attention</small>
+            </div>
 
-    </form>
+            <div class="stat-card">
+                <span>Categories</span>
+                <strong id="categoryCount">0</strong>
+                <small>Different issue types</small>
+            </div>
+        </section>
 
-    <h2>Submitted Requests</h2>
+        <section class="form-section" id="formSection">
 
-    <div id="requests"></div>
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">CREATE REQUEST</span>
+                    <h2>Tell us what happened.</h2>
+                </div>
+                <span class="step">01 / 01</span>
+            </div>
+
+            <form id="requestForm">
+
+                <div class="input-group">
+                    <label for="studentName">Student Name</label>
+                    <input
+                        type="text"
+                        id="studentName"
+                        placeholder="e.g. Nitin Bhardwaj"
+                        required
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="you@example.com"
+                        required
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label for="category">Category</label>
+                    <select id="category" required>
+                        <option value="">Choose a category</option>
+                        <option value="Hostel">Hostel</option>
+                        <option value="Academic">Academic</option>
+                        <option value="Transport">Transport</option>
+                        <option value="Library">Library</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="priority">Priority</label>
+                    <select id="priority" required>
+                        <option value="">Choose priority</option>
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                    </select>
+                </div>
+
+                <div class="input-group full">
+                    <label for="description">Problem Description</label>
+                    <textarea
+                        id="description"
+                        placeholder="Describe the issue clearly..."
+                        required
+                    ></textarea>
+                </div>
+
+                <div class="form-footer">
+                    <span>All fields are required</span>
+                    <button type="submit" id="submitButton">
+                        Submit Request
+                        <span>→</span>
+                    </button>
+                </div>
+
+            </form>
+        </section>
+
+        <section class="requests-section">
+
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">REQUESTS</span>
+                    <h2>Recent submissions.</h2>
+                </div>
+
+                <span class="request-count" id="requestCount">0 requests</span>
+            </div>
+
+            <div id="requests"></div>
+
+        </section>
+
+        <footer>
+            <span>Campus Help Desk</span>
+            <span>Built with Express + JavaScript</span>
+        </footer>
+
+    </main>
 
     <script src="script.js"></script>
 </body>
