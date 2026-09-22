@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
+import "./App.css";
 
 function App() {
   const [products, setProducts] = useState([]);
-
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
 
@@ -42,3 +42,47 @@ function App() {
 
     getProducts();
   };
+
+  return (
+    <div className="container">
+      <h1>Product Management</h1>
+
+      <form className="form" onSubmit={addProduct}>
+        <input
+          type="text"
+          placeholder="Product Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+
+        <input
+          type="number"
+          placeholder="Price"
+          value={price}
+          onChange={(e) => setPrice(e.target.value)}
+        />
+
+        <button type="submit">Add Product</button>
+      </form>
+
+      <div className="products">
+        {products.map((product) => (
+          <div className="product" key={product._id}>
+            <div className="product-info">
+              <strong>{product.name}</strong> - ₹{product.price}
+            </div>
+
+            <button
+              className="delete-btn"
+              onClick={() => deleteProduct(product._id)}
+            >
+              Delete
+            </button>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default App;
