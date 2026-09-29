@@ -34,7 +34,9 @@ const App = () => {
   return (
     <div className="app">
       <header className="navbar">
-        <div className="logo">Notes<span>Portal</span></div>
+        <div className="logo">
+          Notes<span>Portal</span>
+        </div>
 
         <nav>
           <a href="#home">Home</a>
@@ -59,6 +61,7 @@ const App = () => {
 
           <div className="search-box">
             <span>⌕</span>
+
             <input
               type="text"
               placeholder="Search notes..."
@@ -82,27 +85,41 @@ const App = () => {
 
           <div className="notes-grid">
             {filteredDocuments.length > 0 ? (
-              filteredDocuments.map((doc) => (
-                <div className="note-card" key={doc.file}>
-                  <div className="file-icon">
-                    {doc.type}
-                  </div>
+              filteredDocuments.map((doc) => {
+                const fileUrl = `http://localhost:5000/files/${doc.file}`;
+                const downloadUrl = `http://localhost:5000/download/${doc.file}`;
 
-                  <div className="note-info">
-                    <h3>{doc.name}</h3>
-                    <p>{doc.file}</p>
-                  </div>
+                return (
+                  <div className="note-card" key={doc.file}>
+                    <div className="file-icon">
+                      {doc.type}
+                    </div>
 
-                  <a
-                    className="open-btn"
-                    href={`http://localhost:5000/files/${doc.file}`}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Open →
-                  </a>
-                </div>
-              ))
+                    <div className="note-info">
+                      <h3>{doc.name}</h3>
+                      <p>{doc.file}</p>
+                    </div>
+
+                    <div className="actions">
+                      <a
+                        className="open-btn"
+                        href={fileUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Open →
+                      </a>
+
+                      <a
+                        className="download-btn"
+                        href={downloadUrl}
+                      >
+                        Download ↓
+                      </a>
+                    </div>
+                  </div>
+                );
+              })
             ) : (
               <div className="no-results">
                 <h3>No notes found</h3>
@@ -114,7 +131,9 @@ const App = () => {
 
         <section className="about" id="about">
           <p className="small-title">ABOUT</p>
+
           <h2>A simple place for your study material.</h2>
+
           <p>
             Notes Portal helps you search and access your academic notes
             without having to look through multiple folders.

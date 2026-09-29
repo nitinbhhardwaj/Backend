@@ -8,3 +8,9 @@
 //     console.log("Good Morning",name);
 // }
 // breet("Nitin")
+
+function add(a,b)
+{
+    return a+b;
+}
+add(2,4);
